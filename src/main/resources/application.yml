@@ -1,0 +1,11 @@
+server:
+  port: 8101
+spring:
+  application:
+    name: nx-boot-cxf
+  #遇到相同类名覆盖注册
+  main:
+    allow-bean-definition-overriding: true
+# 集成cxf,默认：cxf.path=/services
+cxf:
+  path: /ws
