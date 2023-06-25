@@ -1,8 +1,8 @@
 server:
-  port: 8101
+  port: 8102
 spring:
   application:
-    name: nx-boot-cxf
+    name: nx-boot-cxfway
   #遇到相同类名覆盖注册
   main:
     allow-bean-definition-overriding: true
