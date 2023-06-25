@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * description: 自动发布
+ * description: cxf自动发布方式
  */
 @Slf4j
 @Component

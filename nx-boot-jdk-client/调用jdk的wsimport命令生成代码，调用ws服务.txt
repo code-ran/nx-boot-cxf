@@ -1,0 +1,2 @@
+1、使用wsimport -p com.test -keep -encoding utf-8 -verbose http://localhost:8102/ws/userInfo?wsdl 命令可以在指定的com.test包下根据wsdl的文档地址，解析出wsdl文档，
+  生成调用服务的代码。

@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.xml.ws.Endpoint;
 
 /**
- * description: CXF服务发布配置
+ * description: CXF服务常规发布配置--代码会冗余
  */
 @Configuration
 @Slf4j
