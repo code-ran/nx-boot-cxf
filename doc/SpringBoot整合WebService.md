@@ -536,3 +536,9 @@ public class AutoPublishWSEndpoint implements ApplicationRunner {
 ```
 
 ##### 三、服务消费(客户端)
+
+```
+wsimport -keep -encoding utf-8 -verbose http://localhost:8102/ws/hello?wsdl
+wsimport -p com.test -keep -encoding utf-8 -verbose http://localhost:8102/ws/userInfo?wsdl
+```
+

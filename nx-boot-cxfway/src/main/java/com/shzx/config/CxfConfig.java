@@ -16,8 +16,10 @@ import javax.xml.ws.Endpoint;
  */
 @Configuration
 public class CxfConfig {
+
     @Autowired
     private Bus bus;
+
     @Autowired
     private HelloServiceImpl helloService;
 
@@ -27,31 +29,32 @@ public class CxfConfig {
     @Autowired
     private DeptInfoWSServiceImpl deptInfoWSService;
 
+
     /**
      * description: hello webService服务
      * @param
      * @return String
      */
-//    @Bean
-//    public Endpoint helloServer() {
-//        EndpointImpl endpoint = new EndpointImpl(bus, helloService);
-//        //访问:http://localhost:8102/ws/hello?wsdl
-//        endpoint.publish("/hello");
-//        return endpoint;
-//    }
-//
-//
-//    /**
-//     * description: 用户信息 WebService服务
-//     * @param
-//     * @return String
-//     */
-//    @Bean
-//    public Endpoint userInfo() {
-//        EndpointImpl endpoint = new EndpointImpl(bus, userInfoWSService);
-//        endpoint.publish("/userInfo");
-//        return endpoint;
-//    }
+    @Bean
+    public Endpoint helloServer() {
+        EndpointImpl endpoint = new EndpointImpl(bus, helloService);
+        //访问:http://localhost:8102/ws/hello?wsdl
+        endpoint.publish("/hello");
+        return endpoint;
+    }
+
+
+    /**
+     * description: 用户信息 WebService服务
+     * @param
+     * @return String
+     */
+    @Bean
+    public Endpoint userInfo() {
+        EndpointImpl endpoint = new EndpointImpl(bus, userInfoWSService);
+        endpoint.publish("/userInfo");
+        return endpoint;
+    }
 //
 //    /**
 //     * description: 组织信息webservice服务

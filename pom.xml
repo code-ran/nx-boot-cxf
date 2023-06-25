@@ -15,7 +15,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>nx-boo-jdk</module>
+        <module>nx-boot-jdk</module>
         <module>nx-boot-cxfway</module>
         <module>nx-boot-jdk-client</module>
     </modules>
