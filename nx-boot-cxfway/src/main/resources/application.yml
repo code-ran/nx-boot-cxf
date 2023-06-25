@@ -9,3 +9,7 @@ spring:
 # 集成cxf,默认：cxf.path=/services
 cxf:
   path: /ws
+#CXF服务常规发布开关，默认关闭
+cxfenable: N
+#CXF服务自动发布开关，默认关闭
+autocxfenable: N

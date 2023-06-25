@@ -46,8 +46,16 @@ public class AutoPublishWSEndpoint implements ApplicationRunner {
     @Autowired
     private WebApplicationContext webApplicationContext;
 
+
+    @Value("${application.autocxfenable:N}")
+    private String autocxfEnable;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        if ("N".equals(autocxfEnable)) {
+            log.info("CXF服务自动发布获取到的配置为N");
+            return;
+        }
         log.info("AutoPublishWSEndpoint===发布开始");
         //根据注解获取beanNames
         String[] beanNames = webApplicationContext.getBeanNamesForAnnotation(AutoPublishWS.class);
@@ -69,6 +77,7 @@ public class AutoPublishWSEndpoint implements ApplicationRunner {
 
     /**
      * description: 打印访问路径
+     *
      * @param environment 运行环境
      * @param cxfPathList 发布的WS路径
      * @return String

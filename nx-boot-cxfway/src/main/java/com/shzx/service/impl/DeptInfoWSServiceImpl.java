@@ -11,7 +11,7 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 
-//@AutoPublishWS(publishPath = "autoDeptInfo")
+@AutoPublishWS(publishPath = "autoDeptInfo")
 @Service
 @WebService
 public class DeptInfoWSServiceImpl implements WSService {
