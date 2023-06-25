@@ -47,7 +47,7 @@ public class AutoPublishWSEndpoint implements ApplicationRunner {
     private WebApplicationContext webApplicationContext;
 
 
-    @Value("${application.autocxfenable:N}")
+    @Value("${autocxfenable:N}")
     private String autocxfEnable;
 
     @Override

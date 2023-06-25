@@ -10,6 +10,6 @@ spring:
 cxf:
   path: /ws
 #CXF服务常规发布开关，默认关闭
-cxfenable: N
+cxfenable: Y
 #CXF服务自动发布开关，默认关闭
-autocxfenable: N
+autocxfenable: Y

@@ -32,7 +32,7 @@ public class CxfConfig {
     @Autowired
     private DeptInfoWSServiceImpl deptInfoWSService;
 
-    @Value("${application.cxfenable:N}")
+    @Value("${cxfenable:N}")
     private String cxfEnable;
 
 
