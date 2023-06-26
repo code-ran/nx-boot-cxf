@@ -18,6 +18,10 @@
         <module>nx-boot-jdk</module>
         <module>nx-boot-cxfway</module>
         <module>nx-boot-jdk-client</module>
+        <module>nx-boot-cxf-client</module>
+        <module>nx-boot-dynamic-cxf-client</module>
+        <module>nx-cxf-dynamic-client</module>
+        <module>nx-oms-test</module>
     </modules>
 
     <name>nx-boot-cxf</name>

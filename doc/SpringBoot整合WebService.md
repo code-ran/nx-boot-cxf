@@ -537,8 +537,84 @@ public class AutoPublishWSEndpoint implements ApplicationRunner {
 
 ##### 三、服务消费(客户端)
 
+1、使用jdk自带的命令生成调用代码:
+
 ```
 wsimport -keep -encoding utf-8 -verbose http://localhost:8102/ws/hello?wsdl
 wsimport -p com.test -keep -encoding utf-8 -verbose http://localhost:8102/ws/userInfo?wsdl
 ```
 
+```java
+package test;
+
+import com.shzx.service.impl.HelloServiceImpl;
+import com.shzx.service.impl.HelloServiceImplService;
+/**
+ * @description:
+ * @author: rsb
+ * @description: 2023-06-25-15-55
+ * @description:
+ * @Version: 1.0.0
+ */
+public class MyTest {
+    public static void main(String[] args) {
+        HelloServiceImplService helloServiceImplService = new HelloServiceImplService();
+        HelloServiceImpl servicePort = helloServiceImplService.getHelloServiceImplPort();
+        String var = servicePort.sayHello("张三");
+        System.out.println("====调用成功===="+var);
+    }
+}
+```
+
+2、使用cxf的wsdl命令生成调用代码：
+
+官网:https://cxf.apache.org/download.html
+
+使用: https://cxf.apache.org/docs/tools.html
+
+![image-20230626133600677](SpringBoot整合WebService.assets/image-20230626133600677.png)
+
+```
+wsdl2java -keep -encoding utf-8 -verbose http://10.123.10.213:8102/ws/hello?wsdl
+
+
+wsdl2java -p com.cxfdemo -keep -encoding utf-8 -verbose http://10.123.10.213:8102/ws/autoDeptInfo?wsdl
+
+```
+
+![image-20230626113532687](SpringBoot整合WebService.assets/image-20230626113532687.png)
+
+![image-20230626113551595](SpringBoot整合WebService.assets/image-20230626113551595.png)
+
+```java
+package com.cxfdemo.test;
+
+import com.cxfdemo.DeptInfoWSServiceImpl;
+import com.cxfdemo.DeptInfoWSServiceImplService;
+
+/**
+ * @description:
+ * @author: rsb
+ * @description: 2023-06-26-11-46
+ * @description:
+ * @Version: 1.0.0
+ */
+public class MyCxfTest {
+    public static void main(String[] args) {
+        DeptInfoWSServiceImplService wsService = new DeptInfoWSServiceImplService();
+        DeptInfoWSServiceImpl serverPort = wsService.getDeptInfoWSServiceImplPort();
+        String msg = serverPort.getInfo();
+        System.out.println("远程调用ws服务成功:" + msg);
+    }
+}
+```
+
+##### 四、使用CXF动态调用WS服务
+
+```
+无需生成代码，仅限第三方用java语言发布的WebService接口动态调用，不支持用.net发布的WebService接口
+```
+
+https://cxf.apache.org/docs/frontends.html
+
+![image-20230626160551627](SpringBoot整合WebService.assets/image-20230626160551627.png)

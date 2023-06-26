@@ -1,0 +1,8 @@
+server:
+  port: 8104
+spring:
+  application:
+    name: nx-cxf-dynamic-client
+  #遇到相同类名覆盖注册
+  main:
+    allow-bean-definition-overriding: true
